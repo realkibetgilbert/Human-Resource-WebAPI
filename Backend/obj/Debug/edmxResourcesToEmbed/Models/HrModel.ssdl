@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HR.myModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblEmployerBank">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="250" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="BankAccount" Type="varchar" MaxLength="250" />
+    <Property Name="Address1" Type="varchar" MaxLength="250" />
+    <Property Name="Address2" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="250" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="250" />
+    <Property Name="State" Type="varchar" MaxLength="250" />
+    <Property Name="Country" Type="varchar" MaxLength="250" />
+    <Property Name="Telephone" Type="varchar" MaxLength="250" />
+    <Property Name="Fax" Type="varchar" MaxLength="250" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblEmployerBranch">
+    <Key>
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Name="BranchId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="250" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblEmployerCourse">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="250" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblEmployerDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" />
+    <Property Name="Code" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblEmployerDocumentCategory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblEmployerEthnicity">
+    <Key>
+      <PropertyRef Name="EthnicityId" />
+    </Key>
+    <Property Name="EthnicityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblEmployerInfo">
+    <Key>
+      <PropertyRef Name="EmployerId" />
+    </Key>
+    <Property Name="EmployerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="RegistrationNumber" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Industry" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="HomeCountry" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="PortalUrl" Type="varchar" MaxLength="250" />
+    <Property Name="Email" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="WebSite" Type="varchar" MaxLength="250" />
+    <Property Name="Address1" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Address2" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="State" Type="varchar" MaxLength="250" />
+    <Property Name="Country" Type="varchar" MaxLength="250" />
+    <Property Name="Telephone" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Fax" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="tblEmployerLevel">
+    <Key>
+      <PropertyRef Name="LevelId" />
+    </Key>
+    <Property Name="LevelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="250" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblEmployerReligion">
+    <Key>
+      <PropertyRef Name="ReligionId" />
+    </Key>
+    <Property Name="ReligionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblEmployerTrainer">
+    <Key>
+      <PropertyRef Name="TrainerId" />
+    </Key>
+    <Property Name="TrainerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="250" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblJobPosition">
+    <Key>
+      <PropertyRef Name="JobPositionId" />
+    </Key>
+    <Property Name="JobPositionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="250" />
+    <Property Name="Title" Type="varchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Responsibility" Type="varchar" MaxLength="250" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="GUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="tblNewEmployee">
+    <Key>
+      <PropertyRef Name="NewEmployeeId" />
+    </Key>
+    <Property Name="NewEmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Position" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="DateJoined" Type="smalldatetime" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Modified" Type="smalldatetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="CreatedOn" Type="smalldatetime" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="250" />
+    <Property Name="ModifiedOn" Type="smalldatetime" />
+    <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Function Name="proc_AddEditEmployerBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BankId" Type="int" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="BankAccount" Type="varchar" Mode="In" />
+    <Parameter Name="Address1" Type="varchar" Mode="In" />
+    <Parameter Name="Address2" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="PostalCode" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Telephone" Type="varchar" Mode="In" />
+    <Parameter Name="Fax" Type="varchar" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerBanks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BankId" Type="int" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="BankAccount" Type="varchar" Mode="In" />
+    <Parameter Name="Address1" Type="varchar" Mode="In" />
+    <Parameter Name="Address2" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="PostalCode" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Telephone" Type="varchar" Mode="In" />
+    <Parameter Name="Fax" Type="varchar" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerBranch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BranchId" Type="int" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CourseId" Type="int" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DepartmentId" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerDocumentCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryId" Type="int" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerEthnicity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EthnicityId" Type="int" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LevelId" Type="int" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerReligion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ReligionId" Type="int" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditEmployerTrainer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TrainerId" Type="int" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditJobPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="JobPositionId" Type="int" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Responsibility" Type="varchar" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEditNewEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NewEmployeeId" Type="int" Mode="In" />
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="varchar" Mode="In" />
+    <Parameter Name="Position" Type="varchar" Mode="In" />
+    <Parameter Name="Department" Type="varchar" Mode="In" />
+    <Parameter Name="DateJoined" Type="smalldatetime" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="Modified" Type="smalldatetime" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_AddEmployerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployerId" Type="int" Mode="In" />
+    <Parameter Name="ImageName" Type="varchar" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="RegistrationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Industry" Type="varchar" Mode="In" />
+    <Parameter Name="HomeCountry" Type="varchar" Mode="In" />
+    <Parameter Name="PortalUrl" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="WebSite" Type="varchar" Mode="In" />
+    <Parameter Name="Address1" Type="varchar" Mode="In" />
+    <Parameter Name="Address2" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="PostalCode" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Telephone" Type="varchar" Mode="In" />
+    <Parameter Name="Fax" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_AddUpdateEmployerLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LevelId" Type="int" Mode="In" />
+    <Parameter Name="Code" Type="varchar" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="Delete" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="proc_EditEmployerInformations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployerId" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="RegistrationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Industry" Type="varchar" Mode="In" />
+    <Parameter Name="HomeCountry" Type="varchar" Mode="In" />
+    <Parameter Name="PortalUrl" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="WebSite" Type="varchar" Mode="In" />
+    <Parameter Name="Address1" Type="varchar" Mode="In" />
+    <Parameter Name="Address2" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="PostalCode" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Telephone" Type="varchar" Mode="In" />
+    <Parameter Name="Fax" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_GetAllEmployerBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerBanks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerBranch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerCourse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerDocumentCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerEthnicity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerReligion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllEmployerTrainer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllJobPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllNewEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_UpdateEmployerImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployerId" Type="int" Mode="In" />
+    <Parameter Name="ImageName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_UpdateEmployerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployerId" Type="int" Mode="In" />
+    <Parameter Name="ImageName" Type="varchar" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="RegistrationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Industry" Type="varchar" Mode="In" />
+    <Parameter Name="HomeCountry" Type="varchar" Mode="In" />
+    <Parameter Name="PortalUrl" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="WebSite" Type="varchar" Mode="In" />
+    <Parameter Name="Address1" Type="varchar" Mode="In" />
+    <Parameter Name="Address2" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="PostalCode" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Telephone" Type="varchar" Mode="In" />
+    <Parameter Name="Fax" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_UpdateEmployerInformation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployerId" Type="int" Mode="In" />
+    <Parameter Name="ImageName" Type="varchar" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="RegistrationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Industry" Type="varchar" Mode="In" />
+    <Parameter Name="HomeCountry" Type="varchar" Mode="In" />
+    <Parameter Name="PortalUrl" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="WebSite" Type="varchar" Mode="In" />
+    <Parameter Name="Address1" Type="varchar" Mode="In" />
+    <Parameter Name="Address2" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="PostalCode" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Telephone" Type="varchar" Mode="In" />
+    <Parameter Name="Fax" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="HRmyModelStoreContainer">
+    <EntitySet Name="tblEmployerBank" EntityType="Self.tblEmployerBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerBranch" EntityType="Self.tblEmployerBranch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerCourse" EntityType="Self.tblEmployerCourse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerDepartment" EntityType="Self.tblEmployerDepartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerDocumentCategory" EntityType="Self.tblEmployerDocumentCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerEthnicity" EntityType="Self.tblEmployerEthnicity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerInfo" EntityType="Self.tblEmployerInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerLevel" EntityType="Self.tblEmployerLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerReligion" EntityType="Self.tblEmployerReligion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployerTrainer" EntityType="Self.tblEmployerTrainer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblJobPosition" EntityType="Self.tblJobPosition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNewEmployee" EntityType="Self.tblNewEmployee" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

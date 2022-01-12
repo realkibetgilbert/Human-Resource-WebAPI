@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HR.myModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblNewEmployees" EntityType="HR.myModel.tblNewEmployee" />
+    <FunctionImport Name="proc_AddEditNewEmployee" ReturnType="Collection(HR.myModel.proc_AddEditNewEmployee_Result)">
+      <Parameter Name="NewEmployeeId" Mode="In" Type="Int32" />
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="Position" Mode="In" Type="String" />
+      <Parameter Name="Department" Mode="In" Type="String" />
+      <Parameter Name="DateJoined" Mode="In" Type="DateTime" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Modified" Mode="In" Type="DateTime" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllNewEmployee" ReturnType="Collection(HR.myModel.proc_GetAllNewEmployee_Result)" />
+    <EntitySet Name="tblEmployerInfoes" EntityType="HR.myModel.tblEmployerInfo" />
+    <FunctionImport Name="proc_AddEmployerInfo" ReturnType="Collection(HR.myModel.proc_AddEmployerInfo_Result)">
+      <Parameter Name="EmployerId" Mode="In" Type="Int32" />
+      <Parameter Name="ImageName" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="RegistrationNumber" Mode="In" Type="String" />
+      <Parameter Name="Industry" Mode="In" Type="String" />
+      <Parameter Name="HomeCountry" Mode="In" Type="String" />
+      <Parameter Name="PortalUrl" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="WebSite" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="Address2" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Telephone" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerInfo" ReturnType="Collection(HR.myModel.proc_GetAllEmployerInfo_Result)" />
+    <FunctionImport Name="proc_UpdateEmployerInfo" ReturnType="Collection(HR.myModel.proc_UpdateEmployerInfo_Result)">
+      <Parameter Name="EmployerId" Mode="In" Type="Int32" />
+      <Parameter Name="ImageName" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="RegistrationNumber" Mode="In" Type="String" />
+      <Parameter Name="Industry" Mode="In" Type="String" />
+      <Parameter Name="HomeCountry" Mode="In" Type="String" />
+      <Parameter Name="PortalUrl" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="WebSite" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="Address2" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Telephone" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblJobPositions" EntityType="HR.myModel.tblJobPosition" />
+    <FunctionImport Name="proc_AddEditJobPosition" ReturnType="Collection(HR.myModel.proc_AddEditJobPosition_Result)">
+      <Parameter Name="JobPositionId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Responsibility" Mode="In" Type="String" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllJobPosition" ReturnType="Collection(HR.myModel.proc_GetAllJobPosition_Result)" />
+    <EntitySet Name="tblEmployerBanks" EntityType="HR.myModel.tblEmployerBank" />
+    <FunctionImport Name="proc_AddEditEmployerBank" ReturnType="Collection(HR.myModel.proc_AddEditEmployerBank_Result)">
+      <Parameter Name="BankId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="BankAccount" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="Address2" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Telephone" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerBank" ReturnType="Collection(HR.myModel.proc_GetAllEmployerBank_Result)" />
+    <FunctionImport Name="proc_GetAllEmployerBanks" ReturnType="Collection(HR.myModel.proc_GetAllEmployerBanks_Result)" />
+    <FunctionImport Name="proc_UpdateEmployerInformation" ReturnType="Collection(HR.myModel.proc_UpdateEmployerInformation_Result)">
+      <Parameter Name="EmployerId" Mode="In" Type="Int32" />
+      <Parameter Name="ImageName" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="RegistrationNumber" Mode="In" Type="String" />
+      <Parameter Name="Industry" Mode="In" Type="String" />
+      <Parameter Name="HomeCountry" Mode="In" Type="String" />
+      <Parameter Name="PortalUrl" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="WebSite" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="Address2" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Telephone" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_AddEditEmployerBanks" ReturnType="Collection(HR.myModel.proc_AddEditEmployerBanks_Result)">
+      <Parameter Name="BankId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="BankAccount" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="Address2" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Telephone" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="tblEmployerDepartments" EntityType="HR.myModel.tblEmployerDepartment" />
+    <FunctionImport Name="proc_AddEditEmployerDepartment" ReturnType="Collection(HR.myModel.proc_AddEditEmployerDepartment_Result)">
+      <Parameter Name="DepartmentId" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerDepartment" ReturnType="Collection(HR.myModel.proc_GetAllEmployerDepartment_Result)" />
+    <FunctionImport Name="proc_UpdateEmployerImage" ReturnType="Collection(HR.myModel.proc_UpdateEmployerImage_Result)">
+      <Parameter Name="EmployerId" Mode="In" Type="Int32" />
+      <Parameter Name="ImageName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_EditEmployerInformations" ReturnType="Collection(HR.myModel.proc_EditEmployerInformations_Result)">
+      <Parameter Name="EmployerId" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="RegistrationNumber" Mode="In" Type="String" />
+      <Parameter Name="Industry" Mode="In" Type="String" />
+      <Parameter Name="HomeCountry" Mode="In" Type="String" />
+      <Parameter Name="PortalUrl" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="WebSite" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="Address2" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="PostalCode" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Telephone" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="tblEmployerBranches" EntityType="HR.myModel.tblEmployerBranch" />
+    <FunctionImport Name="proc_AddEditEmployerBranch" ReturnType="Collection(HR.myModel.proc_AddEditEmployerBranch_Result)">
+      <Parameter Name="BranchId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerBranch" ReturnType="Collection(HR.myModel.proc_GetAllEmployerBranch_Result)" />
+    <EntitySet Name="tblEmployerLevels" EntityType="HR.myModel.tblEmployerLevel" />
+    <FunctionImport Name="proc_AddEditEmployerLevel" ReturnType="Collection(HR.myModel.proc_AddEditEmployerLevel_Result)">
+      <Parameter Name="LevelId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerLevel" ReturnType="Collection(HR.myModel.proc_GetAllEmployerLevel_Result)" />
+    <FunctionImport Name="proc_AddUpdateEmployerLevel" ReturnType="Collection(HR.myModel.proc_AddUpdateEmployerLevel_Result)">
+      <Parameter Name="LevelId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="tblEmployerCourses" EntityType="HR.myModel.tblEmployerCourse" />
+    <FunctionImport Name="proc_AddEditEmployerCourse" ReturnType="Collection(HR.myModel.proc_AddEditEmployerCourse_Result)">
+      <Parameter Name="CourseId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerCourse" ReturnType="Collection(HR.myModel.proc_GetAllEmployerCourse_Result)" />
+    <EntitySet Name="tblEmployerTrainers" EntityType="HR.myModel.tblEmployerTrainer" />
+    <FunctionImport Name="proc_AddEditEmployerTrainer" ReturnType="Collection(HR.myModel.proc_AddEditEmployerTrainer_Result)">
+      <Parameter Name="TrainerId" Mode="In" Type="Int32" />
+      <Parameter Name="Code" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerTrainer" ReturnType="Collection(HR.myModel.proc_GetAllEmployerTrainer_Result)" />
+    <EntitySet Name="tblEmployerEthnicities" EntityType="HR.myModel.tblEmployerEthnicity" />
+    <FunctionImport Name="proc_AddEditEmployerEthnicity" ReturnType="Collection(HR.myModel.proc_AddEditEmployerEthnicity_Result)">
+      <Parameter Name="EthnicityId" Mode="In" Type="Int32" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerEthnicity" ReturnType="Collection(HR.myModel.proc_GetAllEmployerEthnicity_Result)" />
+    <EntitySet Name="tblEmployerReligions" EntityType="HR.myModel.tblEmployerReligion" />
+    <FunctionImport Name="proc_AddEditEmployerReligion" ReturnType="Collection(HR.myModel.proc_AddEditEmployerReligion_Result)">
+      <Parameter Name="ReligionId" Mode="In" Type="Int32" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerReligion" ReturnType="Collection(HR.myModel.proc_GetAllEmployerReligion_Result)" />
+    <EntitySet Name="tblEmployerDocumentCategories" EntityType="HR.myModel.tblEmployerDocumentCategory" />
+    <FunctionImport Name="proc_AddEditEmployerDocumentCategory" ReturnType="Collection(HR.myModel.proc_AddEditEmployerDocumentCategory_Result)">
+      <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Delete" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllEmployerDocumentCategory" ReturnType="Collection(HR.myModel.proc_GetAllEmployerDocumentCategory_Result)" />
+  </EntityContainer>
+  <EntityType Name="tblNewEmployee">
+    <Key>
+      <PropertyRef Name="NewEmployeeId" />
+    </Key>
+    <Property Name="NewEmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DateJoined" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Modified" Type="DateTime" Precision="0" />
+    <Property Name="Timestamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="GUID" Type="Guid" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditNewEmployee_Result">
+    <Property Type="Int32" Name="NewEmployeeId" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Position" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Department" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="DateJoined" Nullable="false" Precision="16" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="Modified" Nullable="true" Precision="16" />
+    <Property Type="Binary" Name="Timestamp" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="Guid" Name="GUID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllNewEmployee_Result">
+    <Property Type="Int32" Name="NewEmployeeId" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Position" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Department" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="DateJoined" Nullable="false" Precision="16" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="Modified" Nullable="true" Precision="16" />
+    <Property Type="Binary" Name="Timestamp" Nullable="false" MaxLength="8" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="Guid" Name="GUID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="tblEmployerInfo">
+    <Key>
+      <PropertyRef Name="EmployerId" />
+    </Key>
+    <Property Name="EmployerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="RegistrationNumber" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Industry" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="HomeCountry" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PortalUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="WebSite" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="proc_AddEmployerInfo_Result">
+    <Property Type="Int32" Name="EmployerId" Nullable="false" />
+    <Property Type="String" Name="ImageName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RegistrationNumber" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Industry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="HomeCountry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PortalUrl" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="WebSite" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerInfo_Result">
+    <Property Type="Int32" Name="EmployerId" Nullable="false" />
+    <Property Type="String" Name="ImageName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RegistrationNumber" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Industry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="HomeCountry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PortalUrl" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="WebSite" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="proc_UpdateEmployerInfo_Result">
+    <Property Type="Int32" Name="EmployerId" Nullable="false" />
+    <Property Type="String" Name="ImageName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RegistrationNumber" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Industry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="HomeCountry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PortalUrl" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="WebSite" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <EntityType Name="tblJobPosition">
+    <Key>
+      <PropertyRef Name="JobPositionId" />
+    </Key>
+    <Property Name="JobPositionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Responsibility" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditJobPosition_Result">
+    <Property Type="Int32" Name="JobPositionId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="Responsibility" Nullable="true" MaxLength="250" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllJobPosition_Result">
+    <Property Type="Int32" Name="JobPositionId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="Responsibility" Nullable="true" MaxLength="250" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblEmployerBank">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="BankAccount" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerBank_Result">
+    <Property Type="Int32" Name="BankId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="BankAccount" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerBank_Result">
+    <Property Type="Int32" Name="EmployerId" Nullable="false" />
+    <Property Type="String" Name="ImageName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RegistrationNumber" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Industry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="HomeCountry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PortalUrl" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="WebSite" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerBanks_Result">
+    <Property Type="Int32" Name="BankId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="BankAccount" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_UpdateEmployerInformation_Result">
+    <Property Type="Int32" Name="EmployerId" Nullable="false" />
+    <Property Type="String" Name="ImageName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RegistrationNumber" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Industry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="HomeCountry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PortalUrl" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="WebSite" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="proc_AddEditEmployerBanks_Result">
+    <Property Type="Int32" Name="BankId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="BankAccount" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblEmployerDepartment">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerDepartment_Result">
+    <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerDepartment_Result">
+    <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_UpdateEmployerImage_Result">
+    <Property Type="Int32" Name="EmployerId" Nullable="false" />
+    <Property Type="String" Name="ImageName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RegistrationNumber" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Industry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="HomeCountry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PortalUrl" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="WebSite" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="proc_EditEmployerInformations_Result">
+    <Property Type="Int32" Name="EmployerId" Nullable="false" />
+    <Property Type="String" Name="ImageName" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RegistrationNumber" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Industry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="HomeCountry" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PortalUrl" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="WebSite" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Address2" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Telephone" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <EntityType Name="tblEmployerBranch">
+    <Key>
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Name="BranchId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerBranch_Result">
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerBranch_Result">
+    <Property Type="Int32" Name="BranchId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblEmployerLevel">
+    <Key>
+      <PropertyRef Name="LevelId" />
+    </Key>
+    <Property Name="LevelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerLevel_Result">
+    <Property Type="Int32" Name="LevelId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerLevel_Result">
+    <Property Type="Int32" Name="LevelId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_AddUpdateEmployerLevel_Result">
+    <Property Type="Int32" Name="LevelId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblEmployerCourse">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerCourse_Result">
+    <Property Type="Int32" Name="CourseId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerCourse_Result">
+    <Property Type="Int32" Name="CourseId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="50" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblEmployerTrainer">
+    <Key>
+      <PropertyRef Name="TrainerId" />
+    </Key>
+    <Property Name="TrainerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerTrainer_Result">
+    <Property Type="Int32" Name="TrainerId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerTrainer_Result">
+    <Property Type="Int32" Name="TrainerId" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblEmployerEthnicity">
+    <Key>
+      <PropertyRef Name="EthnicityId" />
+    </Key>
+    <Property Name="EthnicityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerEthnicity_Result">
+    <Property Type="Int32" Name="EthnicityId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerEthnicity_Result">
+    <Property Type="Int32" Name="EthnicityId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblEmployerReligion">
+    <Key>
+      <PropertyRef Name="ReligionId" />
+    </Key>
+    <Property Name="ReligionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerReligion_Result">
+    <Property Type="Int32" Name="ReligionId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerReligion_Result">
+    <Property Type="Int32" Name="ReligionId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="tblEmployerDocumentCategory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="GUID" Type="Guid" />
+  </EntityType>
+  <ComplexType Name="proc_AddEditEmployerDocumentCategory_Result">
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllEmployerDocumentCategory_Result">
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Binary" Name="Timestamp" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedBy" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ModifiedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ModifiedBy" Nullable="true" MaxLength="250" />
+    <Property Type="Guid" Name="GUID" Nullable="true" />
+  </ComplexType>
+</Schema>

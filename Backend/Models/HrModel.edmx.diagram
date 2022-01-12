@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="12810649554e4daf86f5a9a87f00382b" Name="Diagram1" ZoomLevel="44" >
+        <EntityTypeShape EntityType="HR.myModel.tblNewEmployee" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerInfo" Width="1.5" PointX="2.75" PointY="1" />
+        <EntityTypeShape EntityType="HR.myModel.tblJobPosition" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerBank" Width="1.5" PointX="0.75" PointY="4.875" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerDepartment" Width="1.5" PointX="5.25" PointY="4.125" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerBranch" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerLevel" Width="1.5" PointX="7.5" PointY="4" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerCourse" Width="1.5" PointX="3" PointY="5.625" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerTrainer" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerEthnicity" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerReligion" Width="1.5" PointX="9.375" PointY="7.75" />
+        <EntityTypeShape EntityType="HR.myModel.tblEmployerDocumentCategory" Width="1.5" PointX="10.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
