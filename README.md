@@ -1,2 +1,2 @@
 # Human-Resource-.NetBackend
-  This is where i created models and controllers
+  Asp.Net Web API for Human Resource Management System
